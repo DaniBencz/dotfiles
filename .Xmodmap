@@ -1,0 +1,21 @@
+clear control
+clear mod1
+
+!Left Control
+keycode  37 = Control_L
+
+!Left Alt
+keycode  64 = Alt_L Meta_L
+
+!Caps Lock
+keycode  66 = Control_L
+
+!Right Control
+keycode 105 = Control_R
+
+!Alt Gr
+!keycode 108 = Alt_R ISO_Next_Group Alt_R ISO_Next_Group
+keycode 108 = Control_R
+
+add control = Control_L Control_R
+add mod1 = Alt_L Meta_L

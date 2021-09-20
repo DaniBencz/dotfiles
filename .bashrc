@@ -177,5 +177,9 @@ function android(){
   $HOME/Apps/android-studio/bin/studio.sh
 }
 
+function ct(){
+  xmodmap ~/.Xmodmap 
+}
+
 alias racd='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
