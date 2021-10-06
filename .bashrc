@@ -183,3 +183,9 @@ function ct(){
 
 alias racd='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
+source <(kubectl completion bash)
+
+alias k='kubectl'
+
+export EDITOR="code -w"
+export KUBE_EDITOR=$EDITOR
