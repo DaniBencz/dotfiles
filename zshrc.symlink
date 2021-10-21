@@ -1,0 +1,48 @@
+# THEME
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "lukechilds/zsh-nvm"
+zplug "nnao45/zsh-kubectl-completion", lazy:on
+zplug "modules/osx", from:prezto, lazy:on
+zplug "plugins/git", from:oh-my-zsh, lazy:on
+zplug "plugins/docker", from:oh-my-zsh, lazy:on
+zplug "plugins/colored-man-pages", from:oh-my-zsh, lazy:on
+zplug "plugins/copybuffer", from:oh-my-zsh
+zplug "lib/theme-and-appearance", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "lib/key-bindings", from:oh-my-zsh
+zplug "lib/directories", from:oh-my-zsh
+zplug "lib/grep", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "plugins/helm", from:oh-my-zsh, lazy:on
+
+if ! zplug check; then
+  zplug install
+fi
+zplug load
+
+# My secrets
+# source ~/secrets.sh
+
+# My env
+# source ~/env.sh
+
+# My prompt
+source ~/prompt.zsh
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# DOCKER
+alias docker_killall='docker kill $(docker ps -q)'
+
+# K8S
+source <(kubectl completion zsh)
+alias k=kubectl
+complete -F __start_kubectl k
+
+export EDITOR="code -w"
+export KUBE_EDITOR=$EDITOR
