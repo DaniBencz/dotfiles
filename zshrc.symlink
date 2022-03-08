@@ -38,6 +38,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # DOCKER
 alias docker_killall='docker kill $(docker ps -q)'
+d=docker
+dc=docker-compose
 
 # K8S
 source <(kubectl completion zsh)
@@ -46,3 +48,6 @@ complete -F __start_kubectl k
 
 export EDITOR="code -w"
 export KUBE_EDITOR=$EDITOR
+
+# terraform
+alias tf=terraform
